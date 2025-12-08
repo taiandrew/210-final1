@@ -13,6 +13,7 @@ using namespace std;
 const string FILENAME = "/Users/andrewtai/Desktop/COMSC_210/final1/210-final-1-FA25.txt";
 
 // Fn prototypes
+void print_airports(const map<string, int>& airportCounts);
 
 // Main
 int main() {
@@ -30,7 +31,9 @@ int main() {
         stringstream ss(line);
         string orig, dest;
         getline(ss, orig, ' ');
+        cout << orig << endl;
         getline(ss, dest);
+        cout << dest << endl;
 
         airportCounts[orig]++;
         airportCounts[dest]++;
@@ -47,6 +50,7 @@ int main() {
 void print_airports(const map<string, int>& airportCounts) {
     cout << "All airport traffic counts: " << endl;
     for (const auto& pair: airportCounts) {
-        cout << pair.first << ": " << pair.second << endl;
+        cout << pair.first;
+        cout << pair.second << endl;
     }
 }
