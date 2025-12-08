@@ -37,5 +37,16 @@ int main() {
     }
     inFile.close();
 
+    // Print all airport counts
+    print_airports(airportCounts);
+
     return 0;
+}
+
+// Functions
+void print_airports(const map<string, int>& airportCounts) {
+    cout << "All airport traffic counts: " << endl;
+    for (const auto& pair: airportCounts) {
+        cout << pair.first << ": " << pair.second << endl;
+    }
 }
