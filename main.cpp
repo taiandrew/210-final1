@@ -54,8 +54,8 @@ void print_airports(const map<string, int>& airportCounts) {
     cout << "All airport traffic counts: " << endl;
     for (const auto& pair: airportCounts) {
         cout << pair.first << " " << pair.second << endl;
-        cout << endl;
     }
+    cout << endl;
 }
 
 void print_busiest(const map<int, vector<string>>& airportBusiest) {
