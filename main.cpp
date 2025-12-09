@@ -6,7 +6,6 @@
 #include <map>
 #include <vector>
 #include <string>
-#include <sstream>
 
 using namespace std;
 
@@ -41,6 +40,7 @@ int main() {
     for (const auto& pair : airportCounts) {
         airportBusiest[pair.second].push_back(pair.first);
     }
+
     // Print various
     print_airports(airportCounts);
     print_busiest(airportBusiest);
@@ -65,6 +65,7 @@ void print_airports(const map<string, int>& airportCounts) {
 void print_busiest(const map<int, vector<string>>& airportBusiest) {
     // C+P from EC2; prints highest by key
     // Arg: airportBusiest - map of counts to vector of airport codes
+
     auto last_it = --airportBusiest.end();
     cout << "Busiest airport(s) with count " << last_it->first << ":" << endl;
     for (const string& airportCode : last_it->second) {
