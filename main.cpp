@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <vector>
 #include <string>
 #include <sstream>
 
@@ -15,6 +16,7 @@ const string FILENAME = "/Users/andrewtai/Desktop/COMSC_210/final1/210-final-1-F
 // Fn prototypes
 void print_airports(const map<string, int>& airportCounts);
 void print_busiest(const map<int, vector<string>>& airportBusiest);
+void print_range(const map<string, int>& airportCounts, int lower, int upper);
 
 // Main
 int main() {
@@ -34,17 +36,15 @@ int main() {
     }
     inFile.close();
 
-    // Create a map to sort by busiest airports
+    // Create a map to sort by count instead of name
     map<int, vector<string>> airportBusiest;
     for (const auto& pair : airportCounts) {
         airportBusiest[pair.second].push_back(pair.first);
     }
-
     // Print various
     print_airports(airportCounts);
     print_busiest(airportBusiest);
-
-
+    print_range(airportCounts, 5, 8);
 
     return 0;
 }
@@ -64,6 +64,16 @@ void print_busiest(const map<int, vector<string>>& airportBusiest) {
     cout << "Busiest airport(s) with count " << last_it->first << ":" << endl;
     for (const string& airportCode : last_it->second) {
         cout << airportCode << endl;
+    }
+    cout << endl;
+}
+
+void print_range(const map<string, int>& airportCounts, int lower, int upper) {
+    cout << "Airports with traffic in range [" << lower << ", " << upper << "]:" << endl;
+    for (const auto& pair : airportCounts) {
+        if (pair.second >= lower && pair.second <= upper) {
+            cout << pair.first << " " << pair.second << endl;
+        }
     }
     cout << endl;
 }
