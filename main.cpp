@@ -50,7 +50,6 @@ int main() {
 void print_airports(const map<string, int>& airportCounts) {
     cout << "All airport traffic counts: " << endl;
     for (const auto& pair: airportCounts) {
-        cout << pair.first;
-        cout << pair.second << endl;
+        cout << pair.first << " " << pair.second << endl;
     }
 }
