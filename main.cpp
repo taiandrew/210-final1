@@ -36,6 +36,8 @@ int main() {
     // Print all airport counts
     print_airports(airportCounts);
 
+    
+
     return 0;
 }
 
