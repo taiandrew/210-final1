@@ -33,10 +33,16 @@ int main() {
     }
     inFile.close();
 
-    // Print all airport counts
+    // Create a map to sort by busiest airports
+    map<int, vector<string>> airportBusiest;
+    for (const auto& pair : airportCounts) {
+        airportBusiest[pair.second].push_back(pair.first);
+    }
+
+    // Print various
     print_airports(airportCounts);
 
-    
+
 
     return 0;
 }
