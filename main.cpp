@@ -10,7 +10,7 @@
 using namespace std;
 
 // Constants
-const string FILENAME = "/Users/andrewtai/Desktop/COMSC_210/210-final1/210-final-1-FA25 test.txt";
+const string FILENAME = "/Users/andrewtai/Desktop/COMSC_210/210-final1/210-final-1-FA25.txt";
 
 // NOTE: INSTRUCTIONS SAID "YOU MAY NOT USE FUNCTIONS", BUT MILESTONE 3 SUGGESTS CUSTOM DEF FNS
 // I assumed I am allowed to define and use my own functions
