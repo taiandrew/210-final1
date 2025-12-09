@@ -11,7 +11,7 @@
 using namespace std;
 
 // Constants
-const string FILENAME = "/Users/andrewtai/Desktop/COMSC_210/final1/210-final-1-FA25.txt";
+const string FILENAME = "/Users/andrewtai/Desktop/COMSC_210/210-final1/210-final-1-FA25 test.txt";
 
 // Fn prototypes
 void print_airports(const map<string, int>& airportCounts);
