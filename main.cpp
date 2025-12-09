@@ -54,3 +54,12 @@ void print_airports(const map<string, int>& airportCounts) {
         cout << pair.first << " " << pair.second << endl;
     }
 }
+
+void print_busiest(const map<int, vector<string>>& airportBusiest) {
+    // C+P from EC2; prints highest by key
+    auto last_it = --avgRatings.end();
+    cout << "Highest rated movie(s) with rating " << last_it->first << ":" << endl;
+    for (const string& movieName : last_it->second) {
+        cout << "\t" << movieName << endl;
+    }
+}
