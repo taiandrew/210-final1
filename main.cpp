@@ -45,12 +45,16 @@ int main() {
     print_airports(airportCounts);
     print_busiest(airportBusiest);
     print_range(airportCounts, 5, 8);
+    print_range(airportCounts, 1, 5);
 
     return 0;
 }
 
 // Functions
 void print_airports(const map<string, int>& airportCounts) {
+    // Prints all airports + counts by name
+    // Arg: airportCounts - map of airport codes to counts
+
     cout << "All airport traffic counts: " << endl;
     for (const auto& pair: airportCounts) {
         cout << pair.first << " " << pair.second << endl;
@@ -60,6 +64,7 @@ void print_airports(const map<string, int>& airportCounts) {
 
 void print_busiest(const map<int, vector<string>>& airportBusiest) {
     // C+P from EC2; prints highest by key
+    // Arg: airportBusiest - map of counts to vector of airport codes
     auto last_it = --airportBusiest.end();
     cout << "Busiest airport(s) with count " << last_it->first << ":" << endl;
     for (const string& airportCode : last_it->second) {
@@ -69,6 +74,11 @@ void print_busiest(const map<int, vector<string>>& airportBusiest) {
 }
 
 void print_range(const map<string, int>& airportCounts, int lower, int upper) {
+    // Prints airports with counts in [lower, upper]
+    // Args: airportCounts - map of airport codes to counts
+    //      lower - lower bound (inclusive)
+    //      upper - upper bound (inclusive)
+
     cout << "Airports with traffic in range [" << lower << ", " << upper << "]:" << endl;
     for (const auto& pair : airportCounts) {
         if (pair.second >= lower && pair.second <= upper) {
