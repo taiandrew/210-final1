@@ -14,6 +14,7 @@ const string FILENAME = "/Users/andrewtai/Desktop/COMSC_210/final1/210-final-1-F
 
 // Fn prototypes
 void print_airports(const map<string, int>& airportCounts);
+void print_busiest(const map<int, vector<string>>& airportBusiest);
 
 // Main
 int main() {
@@ -41,6 +42,7 @@ int main() {
 
     // Print various
     print_airports(airportCounts);
+    print_busiest(airportBusiest);
 
 
 
@@ -52,14 +54,16 @@ void print_airports(const map<string, int>& airportCounts) {
     cout << "All airport traffic counts: " << endl;
     for (const auto& pair: airportCounts) {
         cout << pair.first << " " << pair.second << endl;
+        cout << endl;
     }
 }
 
 void print_busiest(const map<int, vector<string>>& airportBusiest) {
     // C+P from EC2; prints highest by key
-    auto last_it = --avgRatings.end();
-    cout << "Highest rated movie(s) with rating " << last_it->first << ":" << endl;
-    for (const string& movieName : last_it->second) {
-        cout << "\t" << movieName << endl;
+    auto last_it = --airportBusiest.end();
+    cout << "Busiest airport(s) with count " << last_it->first << ":" << endl;
+    for (const string& airportCode : last_it->second) {
+        cout << airportCode << endl;
     }
+    cout << endl;
 }
