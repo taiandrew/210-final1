@@ -25,16 +25,9 @@ int main() {
         cerr << "Error opening file." << endl;
         return 1;
     }
-    // Below c&p from EC2
-    string line;
-    while (getline(inFile, line)) {
-        stringstream ss(line);
-        string orig, dest;
-        getline(ss, orig, ' ');
-        cout << orig << endl;
-        getline(ss, dest);
-        cout << dest << endl;
-
+    // Edit out C+P code
+    string orig, dest;
+    while (inFile >> orig >> dest) {
         airportCounts[orig]++;
         airportCounts[dest]++;
     }
